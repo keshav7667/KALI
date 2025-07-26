@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta property="og:title" content="">
+  <meta property="og:type" content="">
+  <meta property="og:url" content="">
+  <meta property="og:image" content="">
+  <meta property="og:image:alt" content="">
+
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icon.png">
+
+  <link rel="manifest" href="site.webmanifest">
+  <meta name="theme-color" content="#fafafa">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Keshav Kumar - Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+    body { font-family: 'Inter', sans-serif; }
+    .gradient-bg { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+    .card-hover { transition: all 0.3s ease; }
+    .card-hover:hover { transform: translateY(-5px); box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04); }
+    .skill-badge { transition: all 0.3s ease; }
+    .skill-badge:hover { transform: scale(1.05); }
+    .floating-animation { animation: float 6s ease-in-out infinite; }
+    @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-10px); } }
+    .profile-image {
+      transition: all 0.3s ease;
+      border: 4px solid rgba(255, 255, 255, 0.3);
+    }
+    .profile-image:hover { transform: scale(1.05); }
+    .profile-fallback {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+    }
+    .about-profile {
+      border: 3px solid #e5e7eb;
+      transition: all 0.3s ease;
+    }
+    .about-profile:hover {
+      border-color: #3b82f6;
+      transform: scale(1.02);
+    }
+  </style>
+</head>
+<body class="bg-gray-50">
+<!-- Navigation -->
+<nav class="fixed top-0 w-full bg-white/80 backdrop-blur-md z-50 shadow-sm">
+  <div class="max-w-6xl mx-auto px-6 py-4">
+    <div class="flex justify-between items-center">
+      <div class="text-2xl font-bold text-gray-800">Keshav Kumar</div>
+      <div class="hidden md:flex space-x-8">
+        <a href="#home" class="text-gray-600 hover:text-blue-600 transition-colors">Home</a>
+        <a href="#about" class="text-gray-600 hover:text-blue-600 transition-colors">About</a>
+        <a href="#skills" class="text-gray-600 hover:text-blue-600 transition-colors">Skills</a>
+        <a href="#projects" class="text-gray-600 hover:text-blue-600 transition-colors">Projects</a>
+        <a href="#contact" class="text-gray-600 hover:text-blue-600 transition-colors">Contact</a>
+      </div>
+      <div class="md:hidden">
+        <button id="menu-toggle" class="text-gray-600 hover:text-blue-600">
+          <i class="fas fa-bars text-xl"></i>
+        </button>
+      </div>
+    </div>
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4">
+      <a href="#home" class="block py-2 text-gray-600 hover:text-blue-600 transition-colors">Home</a>
+      <a href="#about" class="block py-2 text-gray-600 hover:text-blue-600 transition-colors">About</a>
+      <a href="#skills" class="block py-2 text-gray-600 hover:text-blue-600 transition-colors">Skills</a>
+      <a href="#projects" class="block py-2 text-gray-600 hover:text-blue-600 transition-colors">Projects</a>
+      <a href="#contact" class="block py-2 text-gray-600 hover:text-blue-600 transition-colors">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero Section -->
+<section id="home" class="gradient-bg min-h-screen flex items-center justify-center relative overflow-hidden">
+  <div class="absolute inset-0 bg-black/20"></div>
+  <div class="relative z-10 text-center text-white max-w-4xl mx-auto px-6">
+    <div class="floating-animation mb-8">
+      <!-- Profile Image Container -->
+      <div class="w-32 h-32 mx-auto mb-8 rounded-full overflow-hidden profile-image">
+        <!-- Replace 'path/to/your-profile-image.jpg' with your actual image path -->
+        <img
+          src="https://via.placeholder.com/150x150/667eea/ffffff?text=KK"
+          alt="Keshav Kumar Profile"
+          class="w-full h-full object-cover"
+          onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+        />
+        <!-- Fallback design if image fails to load -->
+        <div class="w-full h-full profile-fallback rounded-full flex items-center justify-center" style="display: none;">
+          <span class="text-3xl font-bold">KK</span>
+        </div>
+      </div>
+    </div>
+    <h1 class="text-5xl md:text-7xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white to-blue-100">
+      Keshav Kumar
+    </h1>
+    <p class="text-xl md:text-2xl mb-8 text-blue-100">
+      Electronics & Communication Engineer | Full Stack Developer
+    </p>
+    <p class="text-lg mb-12 max-w-2xl mx-auto text-gray-200">
+      Passionate about creating innovative solutions through technology, with expertise in IoT, web development, and system design.
+    </p>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <a href="#projects" class="bg-white text-purple-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition-all transform hover:scale-105">
+        View My Work
+      </a>
+      <a href="#contact" class="border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-purple-600 transition-all transform hover:scale-105">
+        Get In Touch
+      </a>
+    </div>
+  </div>
+  <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 text-white animate-bounce">
+    <i class="fas fa-chevron-down text-2xl"></i>
+  </div>
+</section>
+
+<!-- About Section -->
+<section id="about" class="py-20 bg-white">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl font-bold text-gray-800 mb-4">About Me</h2>
+      <div class="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto"></div>
+    </div>
+    <div class="grid md:grid-cols-2 gap-12 items-center">
+      <div class="space-y-6">
+        <!-- Additional profile image in about section -->
+        <div class="flex items-center mb-6">
+          <div class="w-16 h-16 rounded-full overflow-hidden about-profile mr-4">
+            <img
+              src="https://via.placeholder.com/64x64/3b82f6/ffffff?text=KK"
+              alt="Keshav Kumar"
+              class="w-full h-full object-cover"
+              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+            />
+            <div class="w-full h-full bg-blue-500 flex items-center justify-center text-white font-semibold" style="display: none;">
+              KK
+            </div>
+          </div>
+          <div>
+            <h3 class="text-2xl font-semibold text-gray-800">Electronics & Communication Engineer</h3>
+          </div>
+        </div>
+        <p class="text-gray-600 leading-relaxed">
+          I'm a dedicated Electronics and Communication Engineering graduate from Chandigarh University,
+          passionate about bridging the gap between hardware and software to create meaningful technological solutions.
+        </p>
+        <p class="text-gray-600 leading-relaxed">
+          My expertise spans across multiple programming languages and technologies, with a particular focus on
+          IoT systems, web development, and innovative project design. I believe in continuous learning and
+          applying cutting-edge technologies to solve real-world problems.
+        </p>
+        <div class="grid grid-cols-2 gap-4 pt-6">
+          <div class="text-center p-4 bg-gray-50 rounded-lg">
+            <i class="fas fa-graduation-cap text-3xl text-blue-600 mb-2"></i>
+            <h4 class="font-semibold text-gray-800">Education</h4>
+            <p class="text-sm text-gray-600">ECE Graduate</p>
+          </div>
+          <div class="text-center p-4 bg-gray-50 rounded-lg">
+            <i class="fas fa-project-diagram text-3xl text-purple-600 mb-2"></i>
+            <h4 class="font-semibold text-gray-800">Projects</h4>
+            <p class="text-sm text-gray-600">IoT & Web Development</p>
+          </div>
+        </div>
+      </div>
+      <div class="relative">
+        <div class="bg-gradient-to-r from-blue-500 to-purple-600 p-8 rounded-2xl text-white">
+          <h4 class="text-xl font-semibold mb-6">Quick Facts</h4>
+          <div class="space-y-4">
+            <div class="flex items-center">
+              <i class="fas fa-university w-6 text-blue-200"></i>
+              <span class="ml-3">Chandigarh University</span>
+            </div>
+            <div class="flex items-center">
+              <i class="fas fa-microchip w-6 text-blue-200"></i>
+              <span class="ml-3">Electronics & Communication</span>
+            </div>
+            <div class="flex items-center">
+              <i class="fas fa-map-marker-alt w-6 text-blue-200"></i>
+              <span class="ml-3">Chandigarh, India</span>
+            </div>
+            <div class="flex items-center">
+              <i class="fas fa-code w-6 text-blue-200"></i>
+              <span class="ml-3">Full Stack Developer</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Skills Section -->
+<section id="skills" class="py-20 bg-gray-50">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl font-bold text-gray-800 mb-4">Technical Skills</h2>
+      <div class="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto"></div>
+    </div>
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div class="skill-card bg-white p-6 rounded-xl shadow-md card-hover text-center">
+        <div class="w-16 h-16 mx-auto mb-4 bg-red-100 rounded-full flex items-center justify-center">
+          <i class="fab fa-java text-2xl text-red-600"></i>
+        </div>
+        <h3 class="text-xl font-semibold text-gray-800 mb-2">Java</h3>
+        <p class="text-gray-600 text-sm">Object-oriented programming, data structures, and algorithm implementation</p>
+      </div>
+      <div class="skill-card bg-white p-6 rounded-xl shadow-md card-hover text-center">
+        <div class="w-16 h-16 mx-auto mb-4 bg-blue-100 rounded-full flex items-center justify-center">
+          <i class="fab fa-python text-2xl text-blue-600"></i>
+        </div>
+        <h3 class="text-xl font-semibold text-gray-800 mb-2">Python</h3>
+        <p class="text-gray-600 text-sm">Data analysis, automation, and backend development</p>
+      </div>
+      <div class="skill-card bg-white p-6 rounded-xl shadow-md card-hover text-center">
+        <div class="w-16 h-16 mx-auto mb-4 bg-orange-100 rounded-full flex items-center justify-center">
+          <i class="fab fa-html5 text-2xl text-orange-600"></i>
+        </div>
+        <h3 class="text-xl font-semibold text-gray-800 mb-2">HTML5</h3>
+        <p class="text-gray-600 text-sm">Semantic markup and modern web standards</p>
+      </div>
+      <div class="skill-card bg-white p-6 rounded-xl shadow-md card-hover text-center">
+        <div class="w-16 h-16 mx-auto mb-4 bg-blue-100 rounded-full flex items-center justify-center">
+          <i class="fab fa-css3-alt text-2xl text-blue-500"></i>
+        </div>
+        <h3 class="text-xl font-semibold text-gray-800 mb-2">CSS3</h3>
+        <p class="text-gray-600 text-sm">Responsive design, animations, and modern layouts</p>
+      </div>
+      <div class="skill-card bg-white p-6 rounded-xl shadow-md card-hover text-center lg:col-start-2">
+        <div class="w-16 h-16 mx-auto mb-4 bg-yellow-100 rounded-full flex items-center justify-center">
+          <i class="fab fa-js-square text-2xl text-yellow-600"></i>
+        </div>
+        <h3 class="text-xl font-semibold text-gray-800 mb-2">JavaScript</h3>
+        <p class="text-gray-600 text-sm">ES6+, DOM manipulation, and interactive web applications</p>
+      </div>
+      <div class="skill-card bg-white p-6 rounded-xl shadow-md card-hover text-center">
+        <div class="w-16 h-16 mx-auto mb-4 bg-green-100 rounded-full flex items-center justify-center">
+          <i class="fas fa-wifi text-2xl text-green-600"></i>
+        </div>
+        <h3 class="text-xl font-semibold text-gray-800 mb-2">IoT</h3>
+        <p class="text-gray-600 text-sm">Internet of Things, sensor integration, and smart systems</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Projects Section -->
+<section id="projects" class="py-20 bg-white">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl font-bold text-gray-800 mb-4">Featured Projects</h2>
+      <div class="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto"></div>
+    </div>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- IoT Energy Saving Fan -->
+      <div class="bg-white rounded-xl shadow-lg card-hover overflow-hidden">
+        <div class="h-48 bg-gradient-to-br from-green-400 to-blue-500 flex items-center justify-center">
+          <i class="fas fa-fan text-6xl text-white"></i>
+        </div>
+        <div class="p-6">
+          <h3 class="text-xl font-semibold text-gray-800 mb-3">IoT Based Energy Saving Fan</h3>
+          <p class="text-gray-600 mb-4 text-sm leading-relaxed">
+            Smart fan system that automatically adjusts speed based on room occupancy and temperature,
+            reducing energy consumption by up to 40%.
+          </p>
+          <div class="flex flex-wrap gap-2 mb-4">
+            <span class="px-3 py-1 bg-green-100 text-green-800 text-xs rounded-full">IoT</span>
+            <span class="px-3 py-1 bg-blue-100 text-blue-800 text-xs rounded-full">Arduino</span>
+            <span class="px-3 py-1 bg-purple-100 text-purple-800 text-xs rounded-full">Sensors</span>
+          </div>
+          <div class="flex items-center justify-between">
+            <span class="text-sm text-gray-500">Completed Project</span>
+            <i class="fas fa-external-link-alt text-gray-400 hover:text-blue-600 cursor-pointer"></i>
+          </div>
+        </div>
+      </div>
+
+      <!-- Weather Monitoring System -->
+      <div class="bg-white rounded-xl shadow-lg card-hover overflow-hidden">
+        <div class="h-48 bg-gradient-to-br from-blue-400 to-purple-500 flex items-center justify-center">
+          <i class="fas fa-cloud-sun text-6xl text-white"></i>
+        </div>
+        <div class="p-6">
+          <h3 class="text-xl font-semibold text-gray-800 mb-3">Weather Monitoring System</h3>
+          <p class="text-gray-600 mb-4 text-sm leading-relaxed">
+            Real-time weather monitoring system with data logging capabilities, featuring temperature,
+            humidity, and pressure sensors with web dashboard.
+          </p>
+          <div class="flex flex-wrap gap-2 mb-4">
+            <span class="px-3 py-1 bg-blue-100 text-blue-800 text-xs rounded-full">IoT</span>
+            <span class="px-3 py-1 bg-green-100 text-green-800 text-xs rounded-full">Python</span>
+            <span class="px-3 py-1 bg-yellow-100 text-yellow-800 text-xs rounded-full">Dashboard</span>
+          </div>
+          <div class="flex items-center justify-between">
+            <span class="text-sm text-gray-500">Completed Project</span>
+            <i class="fas fa-external-link-alt text-gray-400 hover:text-blue-600 cursor-pointer"></i>
+          </div>
+        </div>
+      </div>
+
+      <!-- Medical Website Design -->
+      <div class="bg-white rounded-xl shadow-lg card-hover overflow-hidden">
+        <div class="h-48 bg-gradient-to-br from-pink-400 to-red-500 flex items-center justify-center relative">
+          <i class="fas fa-stethoscope text-6xl text-white"></i>
+          <div class="absolute top-4 right-4 bg-yellow-400 text-yellow-800 px-3 py-1 rounded-full text-xs font-medium">
+            In Progress
+          </div>
+        </div>
+        <div class="p-6">
+          <h3 class="text-xl font-semibold text-gray-800 mb-3">Medical Website Design</h3>
+          <p class="text-gray-600 mb-4 text-sm leading-relaxed">
+            Modern, responsive medical website with appointment booking system, patient portal,
+            and telemedicine capabilities for healthcare professionals.
+          </p>
+          <div class="flex flex-wrap gap-2 mb-4">
+            <span class="px-3 py-1 bg-orange-100 text-orange-800 text-xs rounded-full">HTML</span>
+            <span class="px-3 py-1 bg-blue-100 text-blue-800 text-xs rounded-full">CSS</span>
+            <span class="px-3 py-1 bg-yellow-100 text-yellow-800 text-xs rounded-full">JavaScript</span>
+          </div>
+          <div class="flex items-center justify-between">
+            <span class="text-sm text-gray-500">Current Project</span>
+            <i class="fas fa-code text-gray-400 hover:text-blue-600 cursor-pointer"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="py-20 bg-gray-50">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl font-bold text-gray-800 mb-4">Get In Touch</h2>
+      <div class="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto"></div>
+      <p class="text-gray-600 mt-4 max-w-2xl mx-auto">
+        I'm always interested in new opportunities and exciting projects. Let's connect and discuss how we can work together!
+      </p>
+    </div>
+    <div class="grid md:grid-cols-2 gap-12">
+      <div class="space-y-8">
+        <div class="flex items-center space-x-4">
+          <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
+            <i class="fas fa-envelope text-blue-600"></i>
+          </div>
+          <div>
+            <h3 class="font-semibold text-gray-800">Email</h3>
+            <a href="mailto:keshavsingh1157@gmail.com" class="text-blue-600 hover:underline">keshavsingh1157@gmail.com</a>
+          </div>
+        </div>
+        <div class="flex items-center space-x-4">
+          <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
+            <i class="fas fa-phone text-green-600"></i>
+          </div>
+          <div>
+            <h3 class="font-semibold text-gray-800">Phone</h3>
+            <a href="tel:+917667800491" class="text-green-600 hover:underline">+91 7667800491</a>
+          </div>
+        </div>
+        <div class="flex items-center space-x-4">
+          <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center">
+            <i class="fas fa-map-marker-alt text-purple-600"></i>
+          </div>
+          <div>
+            <h3 class="font-semibold text-gray-800">Location</h3>
+            <p class="text-gray-600">Chandigarh, India</p>
+          </div>
+        </div>
+      </div>
+      <div class="bg-white p-8 rounded-xl shadow-lg">
+        <form class="space-y-6">
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-2">Name</label>
+            <input type="text" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all">
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-2">Email</label>
+            <input type="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all">
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-2">Message</label>
+            <textarea rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all resize-none"></textarea>
+          </div>
+          <button type="submit" class="w-full bg-gradient-to-r from-blue-500 to-purple-600 text-white py-3 px-6 rounded-lg font-semibold hover:from-blue-600 hover:to-purple-700 transition-all transform hover:scale-105">
+            Send Message
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-gray-800 text-white py-12">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="text-center">
+      <h3 class="text-2xl font-bold mb-4">Keshav Kumar</h3>
+      <p class="text-gray-400 mb-6">Electronics & Communication Engineer | Full Stack Developer</p>
+      <div class="flex justify-center space-x-6 mb-6">
+        <a href="mailto:keshavsingh1157@gmail.com" class="text-gray-400 hover:text-white transition-colors">
+          <i class="fas fa-envelope text-xl"></i>
+        </a>
+        <a href="tel:+917667800491" class="text-gray-400 hover:text-white transition-colors">
+          <i class="fas fa-phone text-xl"></i>
+        </a>
+        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+          <i class="fab fa-linkedin text-xl"></i>
+        </a>
+        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+          <i class="fab fa-github text-xl"></i>
+        </a>
+      </div>
+      <p class="text-gray-500 text-sm">
+        © 2025 Keshav Kumar. All rights reserved.
+      </p>
+    </div>
+  </div>
+  <iframe class="w-full h-64 mt-8" src="https://youtu.be/5L4k-2n83rc?si=4EkOOMo6hVoFGTm7" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+</footer>
+
+</body>
+</html>
